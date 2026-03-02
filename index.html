@@ -1244,6 +1244,59 @@
     line-height: 1.5;
   }
 
+  /* ======= OLQ SECTION ======= */
+  .olq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  @media(max-width: 768px) {
+    .olq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media(max-width: 500px) {
+    .olq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .olq-card {
+    background: var(--surface2);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 8px;
+    padding: 14px;
+    transition: all 0.3s;
+  }
+
+  .olq-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .olq-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .olq-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .olq-desc {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
   /* ======= SCORE SUMMARY ======= */
   .score-grid {
     display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
@@ -1506,27 +1559,96 @@
     </div>
     <div class="modal-body">
       <div class="tabs">
-        <button class="tab active" onclick="switchTab('mat','mcq',this)">MCQ Practice</button>
-        <button class="tab" onclick="switchTab('mat','quotes',this)">Motivation</button>
+        <button class="tab active" onclick="switchTab('mat','olq',this)">Officer Like Qualities</button>
+        <button class="tab" onclick="switchTab('mat','tips',this)">SSB Tips</button>
         <button class="tab" onclick="switchTab('mat','rules',this)">Rules & Steps</button>
       </div>
 
-      <!-- MCQ PANEL -->
-      <div class="tab-panel active" id="mat-mcq">
-        <div class="mcq-progress-bar"><div class="mcq-progress-fill" id="mcq-fill" style="width:0%"></div></div>
-        <div class="mcq-meta">
-          <span>Question <span id="mcq-current">1</span> of 15</span>
-          <span id="mcq-score-label">Score: 0</span>
-        </div>
-        <div id="mcq-question-area"></div>
-        <div class="nav-row">
-          <button class="btn btn-ghost" id="mcq-prev" onclick="mcqNav(-1)" disabled>← PREV</button>
-          <button class="btn btn-primary" id="mcq-next" onclick="mcqNav(1)">NEXT →</button>
+      <!-- OLQ PANEL -->
+      <div class="tab-panel active" id="mat-olq">
+        <div style="margin-bottom:14px;font-family:'Rajdhani',sans-serif;font-size:0.8rem;color:var(--text-muted);letter-spacing:1px;">15 OFFICER LIKE QUALITIES ASSESSED IN SSB</div>
+        
+        <div class="olq-grid">
+          <div class="olq-card">
+            <div class="olq-num">01</div>
+            <div class="olq-title">Effective Intelligence</div>
+            <div class="olq-desc">Ability to understand situations quickly and make sound decisions</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">02</div>
+            <div class="olq-title">Reasoning Ability</div>
+            <div class="olq-desc">Logical thinking and analytical problem-solving skills</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">03</div>
+            <div class="olq-title">Social Adaptability</div>
+            <div class="olq-desc">Ability to work with different types of people and adjust to new situations</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">04</div>
+            <div class="olq-title">Cooperation</div>
+            <div class="olq-desc">Team spirit and willingness to work with others for common goals</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">05</div>
+            <div class="olq-title">Sense of Responsibility</div>
+            <div class="olq-desc">Accepting ownership of tasks and seeing them through</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">06</div>
+            <div class="olq-title">Self-Confidence</div>
+            <div class="olq-desc">Belief in one's abilities without being arrogant</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">07</div>
+            <div class="olq-title">Initiative</div>
+            <div class="olq-desc">Taking action without being told and solving problems proactively</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">08</div>
+            <div class="olq-title">Selflessness</div>
+            <div class="olq-desc">Putting team goals above personal interests</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">09</div>
+            <div class="olq-title">Honesty</div>
+            <div class="olq-desc">Truthfulness and integrity in all actions</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">10</div>
+            <div class="olq-title">Courage</div>
+            <div class="olq-desc">Facing challenges and taking calculated risks</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">11</div>
+            <div class="olq-title">Speed of Decision</div>
+            <div class="olq-desc">Quick thinking and prompt action under pressure</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">12</div>
+            <div class="olq-title">Organising Ability</div>
+            <div class="olq-desc">Planning and coordinating resources effectively</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">13</div>
+            <div class="olq-title">Power of Expression</div>
+            <div class="olq-desc">Clear communication through speech and writing</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">14</div>
+            <div class="olq-title">Stamina</div>
+            <div class="olq-desc">Physical and mental endurance under stress</div>
+          </div>
+          <div class="olq-card">
+            <div class="olq-num">15</div>
+            <div class="olq-title">Mental Alertness</div>
+            <div class="olq-desc">Being mentally present and quick to respond</div>
+          </div>
         </div>
       </div>
 
-      <!-- QUOTES PANEL -->
-      <div class="tab-panel" id="mat-quotes">
+      <!-- TIPS PANEL -->
+      <div class="tab-panel" id="mat-tips">
         <div style="margin-bottom:14px;font-family:'Rajdhani',sans-serif;font-size:0.8rem;color:var(--text-muted);letter-spacing:1px;">WORDS THAT SHAPED WARRIORS</div>
         <div class="quote-card">
           <div class="quote-text">"It is not the strength of the body, but the strength of the spirit that matters in the end."</div>
